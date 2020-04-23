@@ -3,6 +3,14 @@
 
 ---
 
+
+# about our speaker 
+
+- Stefan Edwards, Practice Lead for Assurance at Trail of Bits
+- Kubernetes Assessment, many Go Assessments 
+
+---
+
 # overview
 
 1. Common Patterns
