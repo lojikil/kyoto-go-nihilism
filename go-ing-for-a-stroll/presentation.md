@@ -187,6 +187,10 @@ err == nil || err != nil
 - Unfortunately, using `defer` can be unintuitive.
 - When `defer`ing a function, the values returned by the `defer`ed function are ignored, including `error` values.
 	- When opening a file for writing and using `defer file.Close()`, errors could be produced but execution will continue.
+
+---
+# Defer Semantics 
+
 - When `defer`ing a function which handles a panic, the `defer` FILO stack order matters.
 	- A `panic` in a `defer`ed function can be `recover`ed by deferred function earlier in the `defer` stack.
 	- An un-`recover`ed `panic` in a `defer`ed function will bubble up to the function's caller.
@@ -194,7 +198,9 @@ err == nil || err != nil
 - _tangentially related_: In what cases would the following fail to process a `panic`?
 ```go
 defer func() {
-	if e := recover(); e != nil { /* my error handling */ }
+    if e := recover(); e != nil { 
+          /* my error handling */ 
+    }
 }()
 ```
 
