@@ -119,10 +119,12 @@ fixing
 - An example: 
 ```go
 os.MkdirAll("/some/path/i/want/to/make", 0600)
-ioutil.WriteFile("/some/file/i/want/to/make/here.txt", ":)", 0600)
+ioutil.WriteFile("/some/file/i/want/to/make/here.txt", 
+":)", 0600)
 ```
 - `os.MkdirAll` will populate the directories specified if they do not already exist, with the specified permissions.
 - `ioutil.WriteFile` will create a file at a specified path (if it doesn't already exist) with the specified permissions, and write to it.
+
 ---
 
 # Standard Library
